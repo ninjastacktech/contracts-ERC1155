@@ -1,0 +1,8 @@
+{
+  "name": "NinjaStack Coins Collection",
+  "description": "NinjaStack Coins is a collection of 3 NFT Tokens meant to provide access to Ninja Stack bots and tools",
+  "image": "https://ninjastack.tech/assets/guy.9bf9f71a.png",
+  "external_link": "https://ninjastack.tech/",
+  "seller_fee_basis_points": 1000,
+  "fee_recipient": "0x5A3f30b4601dC037E62598A80622d7741C716A6d"
+}
