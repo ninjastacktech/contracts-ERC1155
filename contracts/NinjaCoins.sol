@@ -9,19 +9,21 @@ import "./@openzeppelin/contracts/utils/Strings.sol";
 import "./@openzeppelin/contracts/utils/ContextMixin.sol";
 
 /// @custom:security-contact <security email address>
-contract ParkPics is ERC1155, IERC2981, Ownable, Pausable, ContextMixin {
+contract NinjaCoins is ERC1155, IERC2981, Ownable, Pausable, ContextMixin {
 
     using Strings for uint256;
     string public name;
     string public symbol;
     uint256 public total_supply;
     address private _recipient;
+    string private _collectionMetadataUri;
 
     constructor() ERC1155("") {
-        name = "Park Pics";
-        symbol = "PPS";
-        total_supply = 14;
+        name = "NinjaStack Coins";
+        symbol = "NSC";
+        total_supply = 3;
         _recipient = owner();
+        _collectionMetadataUri = "ipfs://bafkreifao5vv2zibn6wvv4ok7ltvighdyezrjs5xjidsv6s26hdidklrwi";
     }
 
     function pause() public onlyOwner {
@@ -104,7 +106,7 @@ contract ParkPics is ERC1155, IERC2981, Ownable, Pausable, ContextMixin {
     /** @dev Contract-level metadata for OpenSea. */
 
     // Update for collection-specific metadata.
-    function contractURI() public pure returns (string memory) {
-        return "ipfs://bafkreigpykz4r3z37nw7bfqh7wvly4ann7woll3eg5256d2i5huc5wrrdq"; // Contract-level metadata for ParkPics
+    function contractURI() public view returns (string memory) {
+        return _collectionMetadataUri;
     }
 }
